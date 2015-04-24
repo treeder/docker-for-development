@@ -27,3 +27,14 @@ docker run --rm -v "$(pwd)":/app -w /app google/golang sh -c './hello'
 ```
 
 Boom.
+
+### Side notes
+
+To keep the container around if you have to build some dependency that takes a while, like
+RocksDB for instance, you can use this trick:
+
+```sh
+docker run --name goapp -v "$GOPATH":/gopath -v "$(pwd)":/app -w /app google/golang sh -c 'go build -o hello && ./hello' || docker start -ia goapp
+```
+
+Which won't delete the container every run. 
