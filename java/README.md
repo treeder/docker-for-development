@@ -1,4 +1,4 @@
-## Quick Example for a Java Worker (3 minutes)
+## Developing Java with Docker
 
 First, let's build it on the right architecture using the actual Docker image it will be running on. The
 dependencies are passed into javac. 
