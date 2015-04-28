@@ -5,11 +5,7 @@ import (
 	"github.com/iron-io/iron_go/worker"
 )
 
-type Person struct {
-	Name string
-}
-
 func main() {
-	worker.ParseFlags() // just ot use the dependency
+	worker.ParseFlags() // just to use the dependency
 	fmt.Println("Hello Go!")
 }
